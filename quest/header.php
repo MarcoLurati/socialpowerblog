@@ -14,6 +14,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<?php wp_head(); ?>
 </head>
@@ -48,9 +49,8 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-md-8">
-					</div>
-					<div class="col-md-2">
+					<!-- <div class="col-md-8"></div> -->
+					<div class="col-md-4 col-md-offset-6">
 						<?php dynamic_sidebar( 'header-widget' ); ?>
 					</div>
 				</div>

@@ -47,7 +47,7 @@ h1 .fa-1x, h1 .fa-2x, h1 .fa-3x, h1 .fa-4x, h1 .fa-5x, h1 .fa-6x, h2 .fa-1x, h2 
 
 body {
   line-height: 1.5em;
-  font: 13px "Open Sans", "Helvetica", "Arial", "sans-serif";
+  font: 15px "Open Sans", "Helvetica", "Arial", "sans-serif";
   color: #6a6767;
   overflow-x: hidden; }
 
@@ -835,6 +835,34 @@ body {
   height: 38px;
   font-size: 0.8em;
 }
+
+#social-language > div {    /* Marco */
+  float: right;
+}
+
+#social-language #social-icons-header {    /* Marco */
+  margin: 0 0 0 10px;
+}
+
+#social-icons-header {
+  float: left;
+}
+
+/*
+
+#social-language .col-md- {
+  float: left;
+}
+
+#secondary-head .container .row div {
+  float: left;
+}
+
+#secondary-head .container .row div div {
+  float: left;
+  margin: 0 10px 0 0;
+}
+*/
 .site-title a{
   font-weight: lighter;
   font-family: "Lato", sans-serif;
@@ -844,7 +872,7 @@ body {
   font-weight: bolder !important;
 }
 #masthead{
-  height: 130px;
+  height: 110px;
   /*box-shadow: 0 21px 7px -18px rgba(20, 20, 250, 1); 
   box-shadow: 0 2px 3px -3px red;*/
 }
@@ -896,24 +924,98 @@ article .entry-content{
 }
 
 
+@media (max-width: 767px) {
+
+  #secondary-head {
+    height: 76px;
+  }
+
+  #social-language {
+    margin-top: 10px;
+  }
+
+  #social-language #icl_lang_sel_widget-1 {
+    float: left;
+  }
+
+  #social-language #social-icons-header {    /* Marco */
+    float: right;
+  }
+
+  #social-language #social-icons-header > a {    /* Marco */
+    padding: 0px 10px 10px 10px;
+
+  }
+
+  #social-language #social-icons-header > a i {
+    font-size: 3em;
+  }
+
+  #masthead {
+    height: 110px;
+  }
+
+  .site-branding {
+    text-align: left;
+  }
+
+
+  #main-menu-collapse {
+    position: absolute;
+    margin-top: .8em;
+    padding-bottom: 1em;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+    left: 0px;
+    display: block;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(193, 193, 193, 0.25);
+  }
+  
+
+/*
+
+box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.25) inset;
+
+  #social-language {
+    margin: 10px 0;
+  } 
+  .site-branding h1, .site-branding a {
+    text-align: left;
+  } 
+  #social-languages div .textwidget {
+    padding: 10px;
+  }
+  .main-header .main-navigation .navbar-collapse{
+    background-color: #f5f5f5 !important;
+  }
+  */
+}
+
+
+@media (min-width: 767px) {
+
+  #masthead {
+    height: 170px;
+  }
+
+}
+
+@media (min-width: 991px) {
+
+  #masthead {
+    height: 110px;
+  }
+
+}
+
+
+
 
 /*---------------------------------------------------------
 Stop CSS rules added by Giovanni
 -------------------------------------------------------- */
-
-
-/*---- Marco ----*/
-
-#icl_lang_sel_widget-1,
-#text-3 {
-  float: right;
-}
-
-#icl_lang_sel_widget-1 {
-  margin-right: 20px;
-}
-
-/*---- Stop Marco ----*/
 
 
 @media (max-width: 767px) {
@@ -1013,14 +1115,13 @@ Stop CSS rules added by Giovanni
   .main-navigation ul > li ul {
     border: 1px solid #e5e5e5; }
 
-
 @media (min-width: 992px) {
   .navbar-nav {
     float: right; } }
 @media (max-width: 991px) {
   .site-branding,
   .main-navigation {
-    text-align: left;   
+    text-align: center;
     margin-bottom: 0;
     float: none;
     width: 100%; }
@@ -1028,8 +1129,7 @@ Stop CSS rules added by Giovanni
     .main-navigation .nav {
       float: none !important;
       text-align: center;
-      display: inline-block;
-    }
+      display: inline-block; }
 
   .logo {
     text-align: center !important; } }
@@ -1166,14 +1266,13 @@ Stop CSS rules added by Giovanni
   .site-branding .logo,
   .site-branding .site-title,
   .site-branding .site-description {
-    text-align: center !important; } }
+    text-align: left !important; } }  /* Marco */
 @media (max-width: 480px) {
   .main-header {
     border-bottom: none; } }
 .secondary-header {
   border-top: 2px solid #27ae60;
-  border-bottom: 1px solid #e5e5e5;
-  height: 76px; }
+  border-bottom: 1px solid #e5e5e5; }
   .secondary-header .callout {
     height: 30px; }
     .secondary-header .callout p {
@@ -2665,7 +2764,7 @@ article.post-normal h1.post-title {
 .main-sidebar .widget_nav_menu li:before, .main-sidebar .widget_categories li:before, .main-sidebar .widget_archive li:before, .main-sidebar .widget_pages li:before, .main-sidebar .widget_meta li:before, .main-sidebar .widget_recent_comments li:before, .main-sidebar .widget_rss li:before, .main-sidebar .widget_recent_entries li:before {
   content: "\f178";
   font-family: "FontAwesome";
-  font-size: 8px;
+  font-size: 10px;
   padding-right: 10px; }
 
 .main-sidebar .sidebar-widget {

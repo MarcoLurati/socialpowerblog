@@ -16,6 +16,7 @@
 if ( post_password_required() ) {
 	return;
 }
+$lang = get_bloginfo('language');
 ?>
 <div id="comments" class="clearfix">
 	<?php if ( have_comments() ) : ?>
@@ -54,16 +55,39 @@ if ( post_password_required() ) {
 		$fields    = array(
 			'author'  => '<div class="col-md-4"><input type="text" placeholder="' . __( 'Name (required)', 'quest' ) . '" name="author" id="author" ' . $aria_req . '></div>',
 			'email'   => '<div class="col-md-4"><input type="text" placeholder="' . __( 'Email Address (required)', 'quest' ) . '" name="email" id="email" ' . $aria_req . '></div>',
-			'website' => '<div class="col-md-4"><input type="text" placeholder="' . __( 'Website', 'quest' ) . '" name="url" id="url"></div>'
+			'website' => '<div class="col-md-4"><input type="text" placeholder="' . __( 'Website', 'quest' ) . '" name="url" id="url"></div>',
 		);
 
-		$comments_args = array(
+		$args = array(
+
+			//'<input id="submit" name="submit" type="submit" value="Invia">' // . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
+		);
+
+		$comments_args_it = array(
 			'fields'        => $fields,
-			'comment_field' => '<div class="row"><div class="col-md-12"><textarea name="comment" id="comment" placeholder="' . __( 'Your Comment...', 'quest' ) . '"></textarea></div></div>',
-			'id_form'       => 'post-comments-form'
+			'comment_field' => '<div class="row"><div class="col-md-12"><textarea name="comment" id="comment" placeholder="' . __( 'Il tuo commento ...', 'quest' ) . '"></textarea></div></div>',
+			'id_form'       => 'post-comments-form',
+
+			'title_reply'  => __( ' ' ),
+			'label_submit' => __('Invia')
 		);
 
-		comment_form( $comments_args ); ?>
+		$comments_args_de = array(
+			'fields'        => $fields,
+			'comment_field' => '<div class="row"><div class="col-md-12"><textarea name="comment" id="comment" placeholder="' . __( 'Ihre Meinung...', 'quest' ) . '"></textarea></div></div>',
+			'id_form'       => 'post-comments-form',
+
+			'title_reply'  => __( ' ' ),
+			'label_submit' => __('Senden')
+		);
+
+		?>
+
+		<?php  if ( $lang === 'de-DE') { 
+			comment_form( $comments_args_de );
+		} else {  //  ( $lang === 'it-IT')
+			comment_form( $comments_args_it );
+		} ?>
 
 	<?php endif; ?>
 </div>

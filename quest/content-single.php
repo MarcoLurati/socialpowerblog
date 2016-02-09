@@ -8,6 +8,7 @@ $view = quest_get_view();
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-normal' ); ?>>
 	<header class="entry-header">
+
 		<?php get_template_part( 'partials/content', 'sticky' ); ?>
 
 		<?php do_action('quest_single_' . $view . '_before_ft_img'); ?>
@@ -59,9 +60,10 @@ $view = quest_get_view();
 	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'quest' ), '<span class="edit-link">', '</span>' ); ?>
 
-		<?php quest_post_author_info(); ?>
+		<?php //quest_post_author_info(); ?>	<!-- Marco -->
+
+		<?php quest_post_single_navigation(); ?>	<!-- Marco -->
 		
-		<?php quest_post_single_navigation(); ?>
 
 		
 	</footer>

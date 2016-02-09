@@ -17,6 +17,13 @@
 							<?php /* Start the Loop */ ?>
 							<?php while ( have_posts() ) : the_post(); ?>
 
+
+
+
+
+						
+							<?php /*	START MARCO --> -> summarized post only (original part)
+
 								<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-normal' ); ?>>
 									<header class="entry-header">
 										<?php get_template_part( 'partials/content', 'sticky' ); ?>
@@ -48,7 +55,10 @@
 									<!-- .entry-header -->
 
 									<div class="entry-content">
+
+										
 										<?php the_excerpt(); ?>
+
 
 										<?php wp_link_pages( array(
 											'before' => '<div class="page-links">' . __( 'Pages:', 'quest' ),
@@ -64,6 +74,101 @@
 									</footer>
 									<!-- .entry-footer -->
 								</article><!-- #post-## -->
+
+
+							END MARCO
+
+							*/ ?>
+
+							
+
+
+
+
+							<!-- START MARCO -> full post view! (modification) / from content-single.php -->
+
+
+
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-normal' ); ?>>
+								<header class="entry-header">
+
+									<?php get_template_part( 'partials/content', 'sticky' ); ?>
+
+									<?php do_action('quest_single_' . $view . '_before_ft_img'); ?>
+
+									<?php if ( ! quest_get_mod( 'layout_' . $view . '_ft-img-hide' ) && has_post_thumbnail() ) : ?>
+
+										<div class="post-image blog-normal effect slide-top" <?php echo quest_featured_image_width( $view ) ?>>
+											<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'blog-normal' ); ?></a>
+
+											<div class="overlay">
+												<div class="caption">
+													<a href="<?php the_permalink() ?>"><?php _e( 'View more', 'quest' ); ?></a>
+												</div>
+												<a href="<?php the_permalink() ?>" class="expand">+</a>
+												<a href="#" class="close-overlay hidden">x</a>
+											</div>
+										</div>
+
+									<?php endif; ?>
+
+									<?php the_title( sprintf( '<h1 class="post-title entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>	<!-- Marco -->
+
+									<?php do_action('quest_single_' . $view . '_after_ft_img'); ?>
+
+									<?php if ( quest_get_mod( 'layout_' . $view . '_title' ) ) : ?>
+										<?php the_title( sprintf( '<h1 class="post-title entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+									<?php endif; ?>
+
+									<?php if ( 'post' == get_post_type() ) : ?>
+										<div class="entry-meta">
+											<?php quest_post_meta(); ?>
+										</div><!-- .entry-meta -->
+									<?php endif; ?>
+
+									<?php quest_post_taxonomy( $view ); ?>
+
+								</header>
+								<!-- .entry-header -->
+
+								<div class="entry-content">
+									<?php the_content(); ?>
+									<?php
+									wp_link_pages( array(
+										'before' => '<div class="page-links">' . __( 'Pages: ', 'quest' ),
+										'after'  => '</div>',
+									) );
+									?>
+								</div>
+								<!-- .entry-content -->
+
+								<footer class="entry-footer">
+									<?php edit_post_link( __( 'Edit', 'quest' ), '<span class="edit-link">', '</span>' ); ?>
+
+									<?php //quest_post_author_info(); ?>	<!-- Marco -->
+
+									
+
+									<?php //quest_post_single_navigation(); ?>	<!-- Marco -->
+									
+
+									
+								</footer>
+								<!-- .entry-footer -->
+							</article><!-- #post-## -->
+
+							
+
+							<?php
+							// If comments are open or we have at least one comment, load up the comment template
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+								//echo "get_comments_number(): "  + get_comments_number() + "" ;
+							endif;
+							?>
+
+							<!-- END MARCO -->
+
 
 							<?php endwhile; ?>
 

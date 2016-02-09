@@ -128,7 +128,7 @@ $quest_defaults = array(
 	/* Global */
 	'typography_global_font_family'           => 'Open Sans',
 	'typography_global_font_variant'          => '300',
-	'typography_global_font_size'             => 13,
+	'typography_global_font_size'             => 15,
 	'typography_global_line_height'           => 1.5,
 	'typography_global_text_transform'        => 'none',
 	'typography_global_letter_spacing'        => 0,

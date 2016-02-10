@@ -116,7 +116,7 @@ $lang = get_bloginfo('language');
 									wp_list_categories( array(
 										//'orderby'    => 'count',
 										'order'      => 'DESC',
-										'show_count' => 0,
+										'show_count' => 1,
 										'title_li'   => '',
 										'number'     => 10,
 										'exclude'	=> '15,17,13,14,16',	// MARCO categorie da escudere

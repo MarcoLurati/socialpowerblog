@@ -124,46 +124,67 @@ $lang = get_bloginfo('language');
 									?>
 
 									<!-- START MARCO -->
+				
 									<?php
+
+
+									// calculate the number of comments in each category
+									function calcComments($cat) {
+										$no = 0;
+										$arg = array(
+											'category' => $cat
+											);
+										$posts = get_posts( $arg );
+
+										foreach ( $posts as $post ) {
+											$no += get_comments_number( $post );
+										}
+										return $no;
+									}
+
+
 									if ( $lang === 'it-IT') {
+
+
 									?>
 
+
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/2016/01/13/ciao-mondo/">Suggerimenti</a>
+											<a href="http://www.socialpowerblog.ch/2016/01/13/ciao-mondo/">Suggerimenti (<?php echo calcComments(15) ?>)</a>
 										</li>
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/2016/01/28/quiz/">Quiz</a>
+											<a href="http://www.socialpowerblog.ch/2016/01/28/quiz/">Quiz (<?php echo calcComments(17) ?>)</a>
 										</li>
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/2016/01/28/vuoi-saperne-di-piu/">Domande</a>
+											<a href="http://www.socialpowerblog.ch/2016/01/28/vuoi-saperne-di-piu/">Domande (<?php echo calcComments(13) ?>)</a>
 										</li>
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/2016/01/28/diffondi-buone-pratiche/">Consigli energetici</a>
+											<a href="http://www.socialpowerblog.ch/2016/01/28/diffondi-buone-pratiche/">Consigli energetici (<?php echo calcComments(14) ?>)</a>
 										</li>
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/2016/01/28/annunci/">Annunci</a>
+											<a href="http://www.socialpowerblog.ch/2016/01/28/annunci/">Annunci (<?php echo calcComments(16) ?>)</a>
 										</li>
 										
 
 									<?php
 									} elseif ( $lang === 'de-DE') {
+
+
 									?>
-
-
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/de/2016/01/28/wie-koennen-wir-die-social-power-app-verbessern/">Ratschläge</a>
+											<a href="http://www.socialpowerblog.ch/de/2016/01/28/wie-koennen-wir-die-social-power-app-verbessern/">Ratschläge  (<?php echo calcComments(76) ?>)</a>
 										</li>
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/de/2016/01/22/quiz/">Quiz</a>
+											<a href="http://www.socialpowerblog.ch/de/2016/01/22/quiz/">Quiz (<?php echo calcComments(75) ?>)</a>
 										</li>
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/de/2016/01/28/fragen/">Fragen</a>
+											<a href="http://www.socialpowerblog.ch/de/2016/01/28/fragen/">Fragen (<?php echo calcComments(73) ?>)</a>
 										</li>
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/de/2016/01/28/verbreite-optimale-vorgehensweisen/">Energietipps</a>
+											<a href="http://www.socialpowerblog.ch/de/2016/01/28/verbreite-optimale-vorgehensweisen/">Energietipps (<?php echo calcComments(74) ?>)</a>
 										</li>
 										<li class="cat-item">
-											<a href="http://www.socialpowerblog.ch/de/2016/01/20/ankuendigungen/">Ankündigungen</a>
+											<a href="http://www.socialpowerblog.ch/de/2016/01/20/ankuendigungen/">Ankündigungen (<?php echo calcComments(72) ?>)</a>
 										</li>
 
 

@@ -47,7 +47,7 @@ h1 .fa-1x, h1 .fa-2x, h1 .fa-3x, h1 .fa-4x, h1 .fa-5x, h1 .fa-6x, h2 .fa-1x, h2 
 
 body {
   line-height: 1.5em;
-  font: 15px "Open Sans", "Helvetica", "Arial", "sans-serif";
+  font: 13px "Open Sans", "Helvetica", "Arial", "sans-serif";
   color: #6a6767;
   overflow-x: hidden; }
 
@@ -835,25 +835,10 @@ body {
   height: 38px;
   font-size: 0.8em;
 }
-
-#social-language > div {    /* Marco */
-  float: right;
-}
-
-#social-language #social-icons-header {    /* Marco */
-  margin: 0 0 0 10px;
-}
-
-#social-icons-header {
-  float: left;
-}
-
 /*
-
 #social-language .col-md- {
   float: left;
 }
-
 #secondary-head .container .row div {
   float: left;
 }
@@ -923,61 +908,8 @@ article .entry-content{
   margin: 20px 0; 
 }
 
-
-@media (max-width: 767px) {
-
-  #secondary-head {
-    height: 76px;
-  }
-
-  #social-language {
-    margin-top: 10px;
-  }
-
-  #social-language #icl_lang_sel_widget-1 {
-    float: left;
-  }
-
-  #social-language #social-icons-header {    /* Marco */
-    float: right;
-  }
-
-  #social-language #social-icons-header > a {    /* Marco */
-    padding: 0px 10px 10px 10px;
-
-  }
-
-  #social-language #social-icons-header > a i {
-    font-size: 3em;
-  }
-
-  #masthead {
-    height: 110px;
-  }
-
-  .site-branding {
-    text-align: left;
-  }
-
-
-  #main-menu-collapse {
-    position: absolute;
-    margin-top: .8em;
-    padding-bottom: 1em;
-    width: 100%;
-    height: auto;
-    z-index: 1000;
-    left: 0px;
-    display: block;
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid rgba(193, 193, 193, 0.25);
-  }
-  
-
 /*
-
-box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.25) inset;
-
+@media (max-width: 767px) {
   #social-language {
     margin: 10px 0;
   } 
@@ -990,26 +922,8 @@ box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.25) inset;
   .main-header .main-navigation .navbar-collapse{
     background-color: #f5f5f5 !important;
   }
-  */
 }
-
-
-@media (min-width: 767px) {
-
-  #masthead {
-    height: 170px;
-  }
-
-}
-
-@media (min-width: 991px) {
-
-  #masthead {
-    height: 110px;
-  }
-
-}
-
+*/
 
 
 
@@ -1266,7 +1180,7 @@ Stop CSS rules added by Giovanni
   .site-branding .logo,
   .site-branding .site-title,
   .site-branding .site-description {
-    text-align: left !important; } }  /* Marco */
+    text-align: center !important; } }
 @media (max-width: 480px) {
   .main-header {
     border-bottom: none; } }
@@ -2764,7 +2678,7 @@ article.post-normal h1.post-title {
 .main-sidebar .widget_nav_menu li:before, .main-sidebar .widget_categories li:before, .main-sidebar .widget_archive li:before, .main-sidebar .widget_pages li:before, .main-sidebar .widget_meta li:before, .main-sidebar .widget_recent_comments li:before, .main-sidebar .widget_rss li:before, .main-sidebar .widget_recent_entries li:before {
   content: "\f178";
   font-family: "FontAwesome";
-  font-size: 10px;
+  font-size: 8px;
   padding-right: 10px; }
 
 .main-sidebar .sidebar-widget {

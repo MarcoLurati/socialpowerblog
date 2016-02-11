@@ -6,6 +6,9 @@
  *
  * @package Quest
  */
+
+$lang = get_bloginfo('language');
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -14,6 +17,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<?php wp_head(); ?>
 </head>
@@ -41,17 +45,16 @@
 			<div class="<?php echo $header_container_cls; ?>">
 				<div class="row">
 					<?php //quest_second_header(); ?>
-					<div class="col-md-2">
+					<div class="col-md-2 col-sm-3 col-xs-12">
 						<div style="margin-top: 5px;">
 							<a href="http://www.socialpower.ch" target="_blank" style="color: white;  font-weight: bold; font-size: 1.1em;" title="Social Power Project">
 								Social Power Project
 							</a>
 						</div>
 					</div>
-					<div class="col-md-8">
-					</div>
-					<div class="col-md-2">
-						<?php dynamic_sidebar( 'header-widget' ); ?>
+					<!-- <div class="col-md-8"></div> -->
+					<div id="social-language" class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
+						<?php dynamic_sidebar( 'header-widget' ); ?>		<!-- selettore lingua + icone -->
 					</div>
 				</div>
 			</div>
@@ -116,8 +119,80 @@
 										'show_count' => 1,
 										'title_li'   => '',
 										'number'     => 10,
+										'exclude'	=> '15,17,13,14,16',	// MARCO categorie da escudere
 									) );
 									?>
+
+									<!-- START MARCO -->
+				
+									<?php
+
+
+									// calculate the number of comments in each category
+									function calcComments($cat) {
+										$no = 0;
+										$arg = array(
+											'category' => $cat
+											);
+										$posts = get_posts( $arg );
+
+										foreach ( $posts as $post ) {
+											$no += get_comments_number( $post );
+										}
+										return $no;
+									}
+
+
+									if ( $lang === 'it-IT') {
+
+
+									?>
+
+
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/2016/01/13/ciao-mondo/">Suggerimenti</a> (<?php echo calcComments(15) ?>)
+										</li>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/2016/01/28/quiz/">Quiz</a> (<?php echo calcComments(17) ?>)
+										</li>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/2016/01/28/vuoi-saperne-di-piu/">Domande</a> (<?php echo calcComments(13) ?>)
+										</li>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/2016/01/28/diffondi-buone-pratiche/">Consigli energetici</a> (<?php echo calcComments(14) ?>)
+										</li>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/2016/01/28/annunci/">Annunci</a> (<?php echo calcComments(16) ?>)
+										</li>
+										
+
+									<?php
+									} elseif ( $lang === 'de-DE') {
+
+
+									?>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/de/2016/01/28/wie-koennen-wir-die-social-power-app-verbessern/">Ratschläge</a>  (<?php echo calcComments(76) ?>)
+										</li>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/de/2016/01/22/quiz/">Quiz</a> (<?php echo calcComments(75) ?>)
+										</li>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/de/2016/01/28/fragen/">Fragen</a> (<?php echo calcComments(73) ?>)
+										</li>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/de/2016/01/28/verbreite-optimale-vorgehensweisen/">Energietipps</a> (<?php echo calcComments(74) ?>)
+										</li>
+										<li class="cat-item">
+											<a href="http://www.socialpowerblog.ch/de/2016/01/20/ankuendigungen/">Ankündigungen</a> (<?php echo calcComments(72) ?>)
+										</li>
+
+
+									<?php } ?>
+								
+									<!-- STOP MARCO -->
+
+
 								</ul>
 							</article><!-- .widget -->
 				</div>

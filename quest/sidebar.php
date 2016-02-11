@@ -20,7 +20,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 <?php // } ?>
 
-
+<div id="secondary" class="widget-area main-sidebar col-md-3" role="complementary">
 
 <?php
 if ( is_user_logged_in() ) {
@@ -28,7 +28,7 @@ if ( is_user_logged_in() ) {
 } else {
 	//echo 'Welcome, visitor!'; ?>
 
-		<div id="secondary" class="widget-area main-sidebar col-md-3" role="complementary">
+
 
 		<aside id="text_icl-4" class="widget widget_text_icl sidebar-widget clearfix">
 
@@ -36,7 +36,7 @@ if ( is_user_logged_in() ) {
 
 				<h3 class="widget-title">Partecipare alla community è facile!</h3>
 				<div class="textwidget">
-					The Social Power community is a great place to share your expertise on energy saving and connect with your team. Get your questions answered, coordinate each other for social bonus, share your tips ideas and feedback, get your problems solved, and give back by helping others! It only takes a minute to get started. 
+					La community di Social Power è il luogo perfetto per condividere le tue abilità sul risparmio energetico e connetterti al tuo team. Trova le risposte alle tue domande, collabora con la tua squadra per raggiungere i social bonus, condividendo suggerimenti e consigli, puoi aiutare il tuo team a vincere! Ci vuole poco per iniziare. Registrati.
 					<br/>
 					<a class="button" href="http://www.socialpowerblog.ch/registrazione">Registrati</a>
 				</div>
@@ -45,21 +45,35 @@ if ( is_user_logged_in() ) {
 
 				<h3 class="widget-title">Bei der Community mitmachen ist einfach!</h3>
 				<div class="textwidget">
-				Die Social Power Community ist der perfekte Platz, um Erfahrungen rund ums Energiesparen zu teilen und dich mit deinem Team zu vernetzen. Hier spielt die Musik: du bekommst Antworten auf deine Fragen, du und dein Team könnt euch koordinieren um die Extrapunkte abzuholen, du kannst deine Ideen und Tipps teilen und Rückmeldungen dazu bekommen und du findest Lösungen für deine Herausforderungen und kannst anderen dabei helfen ihre zu lösen! Eine Anmeldung ist ganz einfach: klicke dazu auf den Anmeldedbutton.
+				Die Social Power Community ist der perfekte Platz, um Erfahrungen rund ums Energiesparen zu teilen und dich mit deinem Team zu vernetzen. Hier spielt die Musik: du bekommst Antworten auf deine Fragen, du und dein Team könnt euch koordinieren um die Extrapunkte abzuholen, du kannst deine Ideen und Tipps teilen und Rückmeldungen dazu bekommen und du findest Lösungen für deine Herausforderungen und kannst anderen dabei helfen ihre zu lösen! Eine Anmeldung ist ganz einfach: klicke dazu auf den Anmeldebutton.
 				<br/>
-					<a class="button" href="http://www.socialpowerblog.ch/de/aufzeichnung">Eingeschrieben</a>
+					<a class="button" href="http://www.socialpowerblog.ch/de/aufzeichnung">Anmelden</a>
 				</div>
 
 			<?php }?>
 
 		</aside>
 
-	</div>
+	<!--</div>-->
 
 <?php } ?>
 
 
-<div id="secondary" class="widget-area main-sidebar col-md-3" role="complementary">
+<!-- <div id="secondary" class="widget-area main-sidebar col-md-3" role="complementary"> -->
+
+
+	<aside id="text_icl-4" class="widget widget_text_icl sidebar-widget clearfix">
+
+		<?php  if( $lang === 'it-IT') { ?>
+			<h3 class="widget-title">Foto</h3>
+		<?php } elseif ( $lang === 'de-DE') { ?>
+			<h3 class="widget-title">Foto</h3>
+		<?php }?>
+
+		<?php echo do_shortcode("[metaslider id=112]"); ?>
+	</aside>
+
+	<!-- Slider con foto della settimana -->
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
 	<?php /* ?>

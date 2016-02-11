@@ -540,4 +540,15 @@ if( class_exists( 'MetaSliderPlugin' ) ) {
 	add_filter( 'metaslider_hoplink', 'quest_metaslider_hoplink', 10, 1 );
 }
 
+
+
+// Giovanni - blocca aggiornamenti tema
+remove_action( 'load-themes.php', 'wp_update_themes');
+remove_action( 'load-update.php', 'wp_update_themes');
+remove_action( 'admin_init', '_maybe_update_themes');
+remove_action( 'wp_update_themes', 'wp_update_themes');
+add_filter( 'pre_transient_update_themes', create_function('$a', "return null;"));
+remove_action( 'load-update-core.php', 'wp_update_themes');
+add_filter( 'pre_site_transient_update_themes', create_function('$a', "return null;"));
+
 ?>

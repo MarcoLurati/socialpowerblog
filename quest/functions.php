@@ -229,6 +229,10 @@ if ( ! function_exists( 'quest_scripts' ) ):
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+		/*elseif ( is_front_page() ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+		else {}*/
 
 	}
 

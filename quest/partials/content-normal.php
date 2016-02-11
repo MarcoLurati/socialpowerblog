@@ -86,9 +86,6 @@
 
 
 							<!-- START MARCO -> full post view! (modification) / from content-single.php -->
-
-
-
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-normal' ); ?>>
 								<header class="entry-header">
 
@@ -133,6 +130,9 @@
 
 								<div class="entry-content">
 									<?php the_content(); ?>
+									
+									<?php //$withcomments = '1'; comments_template(); ?>
+
 									<?php
 									wp_link_pages( array(
 										'before' => '<div class="page-links">' . __( 'Pages: ', 'quest' ),
@@ -140,6 +140,7 @@
 									) );
 									?>
 								</div>
+
 								<!-- .entry-content -->
 
 								<footer class="entry-footer">
@@ -150,23 +151,28 @@
 									<?php //quest_post_single_navigation(); ?>	<!-- Marco -->
 									
 
-									
 								</footer>
+
 								<!-- .entry-footer -->
 							</article><!-- #post-## -->
 
 							
-
 							<?php
 							// If comments are open or we have at least one comment, load up the comment template
-							if ( comments_open() || get_comments_number() ) :
-								comments_template();
-								//echo "get_comments_number(): "  + get_comments_number() + "" ;
+							//if ( comments_open() || get_comments_number() ) :
+							//comments_template('', true);
+
+							if ( comments_open() || get_comments_number()  ) :
+
+								comments_template('../comments-home.php', true);
+								echo '<div style="font-size:0.2em">';
+								echo get_comments_number();
+								echo '</div>'; 
+
 							endif;
 							?>
 
 							<!-- END MARCO -->
-
 
 							<?php endwhile; ?>
 
@@ -177,6 +183,7 @@
 							<?php get_template_part( 'content', 'none' ); ?>
 
 						<?php endif; ?>
+
 
 					</main>
 					<!-- #main -->

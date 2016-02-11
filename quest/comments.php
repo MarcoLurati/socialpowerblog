@@ -18,6 +18,7 @@ if ( post_password_required() ) {
 }
 $lang = get_bloginfo('language');
 ?>
+
 <div id="comments" class="clearfix">
 	<?php if ( have_comments() ) : ?>
 		<div class="post-comments-heading">
